@@ -83,4 +83,10 @@ router.get("/verify", async (req, res) => {
     console.log(error);
   }
 });
+router.get('/data', async (req, res) => {
+  // const { status, limit } = req.query;
+  const payments = await Payment.find();
+  res.json(payments);
+  console.log(payments);
+});
 module.exports = router;
