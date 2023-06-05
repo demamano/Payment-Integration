@@ -4,7 +4,8 @@ import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
 import Account from "./Account";
 import Payment from "./paymentscreen";
 import PaymentVerify from "./PaymentVerify";
-
+import BankList from "./fetchBank";
+import AccountFetch from "./AccountFetch";
 function App() {
   return (
     <>
@@ -51,6 +52,12 @@ function App() {
               >
                 Banks
               </Link>
+              <Link
+                to="/subaccounts"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                subaccount
+              </Link>
             </div>
           </div>
         </div>
@@ -60,7 +67,10 @@ function App() {
         <Route path="/" element={<Account />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/verification" element={<PaymentVerify />} />
-        <Route path="/banks" element={<PaymentVerify />} />
+        <Route path="/banks" element={<BankList />} />
+        <Route path="/subaccounts" element={<AccountFetch />} />
+
+
 
       </Routes>
     </>
