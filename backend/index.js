@@ -5,6 +5,7 @@ const cors = require("cors");
 const paymentRoutes = require("./routes/payment");
 const subaccounts = require("./routes/account");
 const verify = require("./routes/verify");
+const bankRouter = require('./routes/banks');
 
 
 // initialize app
@@ -16,6 +17,7 @@ dotenv.config();
 // middlewares 
 app.use(express.json());
 app.use(cors());
+app.use('/api',bankRouter);
 app.use("/api/payment",paymentRoutes);
 app.use('/api/subaccounts', subaccounts);
 // connect to mongodb

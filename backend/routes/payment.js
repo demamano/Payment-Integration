@@ -69,7 +69,7 @@ router.get("/verify", async (req, res) => {
     };
     request(options, async function (error, response)  {
       if (error) throw new Error(error);
-      console.log(response.body);
+      // console.log(response.body);
       // res.json(JSON.parse.body);
       // const paymentDetails = res.json(JSON.parse.body);
       const paymentDetails = JSON.parse(response.body);
@@ -87,6 +87,6 @@ router.get('/data', async (req, res) => {
   // const { status, limit } = req.query;
   const payments = await Payment.find();
   res.json(payments);
-  console.log(payments);
+  // console.log(payments);
 });
 module.exports = router;
